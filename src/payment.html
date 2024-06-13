@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="css/daterangepicker.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      .out {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .payment-container {
+        margin-top: 100px;
+        width: 80%;
+        max-width: 600px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+      .payment-method {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .payment-method:hover {
+        background-color: #f0f0f0;
+      }
+      .payment-method img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+      .details-container {
+        display: none;
+        margin-top: 20px;
+      }
+      .details-container.active {
+        display: block;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-content {
+        background-color: #fff;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+        position: relative;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .modal input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+      }
+    </style>
+
+    <title>Travie</title>
+  </head>
+
+  <body>
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icofont-close js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <nav class="site-nav">
+      <div class="container">
+        <div class="site-navigation">
+          <img src="favicon.png" alt="" />
+          <a href="index.html" class="logo m-0"
+            >Travie <span class="text-primary">.</span></a
+          >
+
+          <ul
+            class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right"
+          >
+            <li><a href="index.html">Home</a></li>
+            <li><a href="plan.html">Plan</a></li>
+            <li><a href="register.html">Đăng kí</a></li>
+            <li class="active"><a href="login.html">Đăng nhập</a></li>
+          </ul>
+
+          <a
+            href="#"
+            class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
+            data-toggle="collapse"
+            data-target="#main-navbar"
+          >
+            <span></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="out">
+      <div class="payment-container">
+        <h2 class="text-center mb-4">Thanh toán</h2>
+
+        <!-- Thông tin tổng chi phí -->
+        <div class="payment-info">
+          <h4>Tổng chi phí</h4>
+        </div>
+
+        <!-- Thông tin về giá dịch vụ, vận chuyển, phòng ở -->
+        <div class="payment-info">
+          <div style="display: flex; justify-content: space-between">
+            <p>Giá dịch vụ</p>
+            <p>50$</p>
+          </div>
+          <div style="display: flex; justify-content: space-between">
+            <p>Phí vận chuyển</p>
+            <p>10$</p>
+          </div>
+          <div style="display: flex; justify-content: space-between">
+            <p>Giá phòng ở</p>
+            <p>40$</p>
+          </div>
+          <hr />
+          <div style="display: flex; justify-content: space-between">
+            <p>Tổng số tiền cần thanh toán</p>
+            <p>100$</p>
+          </div>
+        </div>
+
+        <div class="payment-method" onclick="showModal('bank')">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8cP_f2Uk7B-xwJKtd1SAbUK6rOlINX7OSEw&s"
+            alt="Ngân hàng"
+          />
+          <span>Thanh toán qua Ngân hàng</span>
+        </div>
+        <div class="payment-method" onclick="showModal('momo')">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZcQPC-zWVyFOu9J2OGl0j2D220D49D0Z7BQ&s"
+            alt="Momo"
+          />
+          <span>Thanh toán qua Momo</span>
+        </div>
+        <div class="payment-method" onclick="showModal('paypal')">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwO6KS3QuzGJkzNNw0J9yIlcLdi1VPrHJbIw&s"
+            alt="Paypal"
+          />
+          <span>Thanh toán qua Paypal</span>
+        </div>
+        <div class="payment-method" onclick="showModal('installment')">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XKGAPZ8Z-V4bdICD9kBuMTRnCqCwzSVifQ&s"
+            alt="Trả góp"
+          />
+          <span>Trả góp</span>
+        </div>
+      </div>
+
+      <div id="bank-modal" class="modal">
+        <div class="modal-content">
+          <h3>Thanh toán qua Ngân hàng</h3>
+          <p>Vui lòng điền thông tin tài khoản ngân hàng của bạn.</p>
+          <input type="text" placeholder="Số tài khoản" />
+          <input type="text" placeholder="Tên ngân hàng" />
+          <button class="select-hotel-btn" style="font-size: large">Xác nhận</button>
+        </div>
+      </div>
+
+      <div id="momo-modal" class="modal">
+        <div class="modal-content">
+          <h3>Thanh toán qua Momo</h3>
+          <p>Vui lòng điền thông tin tài khoản Momo của bạn.</p>
+          <input type="text" placeholder="Số điện thoại" />
+          <button class="select-hotel-btn">Xác nhận</button>
+        </div>
+      </div>
+
+      <div id="paypal-modal" class="modal">
+        <div class="modal-content">
+          <h3>Thanh toán qua Paypal</h3>
+          <p>Vui lòng điền thông tin tài khoản Paypal của bạn.</p>
+          <input type="email" placeholder="Email Paypal" />
+          <button class="select-hotel-btn">Xác nhận</button>
+        </div>
+      </div>
+
+      <div id="installment-modal" class="modal">
+        <div class="modal-content">
+          <h3>Trả góp</h3>
+          <p>Vui lòng điền thông tin để trả góp.</p>
+          <input type="text" placeholder="Số tiền trả trước" />
+          <input type="text" placeholder="Kỳ hạn trả góp" />
+          <button class="select-hotel-btn">Xác nhận</button>
+        </div>
+      </div>
+
+      <script>
+        function showModal(method) {
+          document.getElementById(method + "-modal").style.display = "flex";
+        }
+
+        function closeModal(method) {
+          document.getElementById(method + "-modal").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+          var modals = document.querySelectorAll(".modal");
+          modals.forEach(function (modal) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          });
+        };
+      </script>
+    </div>
+
+    <div class="site-footer">
+      <div class="inner first">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <div class="widget">
+                <h3 class="heading">About Travie</h3>
+                <p>
+                  Far far away, behind the word mountains, far from the countries Vokalia
+                  and Consonantia, there live the blind texts.
+                </p>
+              </div>
+              <div class="widget">
+                <ul class="list-unstyled social">
+                  <li>
+                    <a href="#"><span class="icon-twitter"></span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon-instagram"></span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon-facebook"></span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon-linkedin"></span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon-dribbble"></span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon-pinterest"></span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon-apple"></span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon-google"></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-2 pl-lg-5">
+              <div class="widget">
+                <h3 class="heading">Pages</h3>
+                <ul class="links list-unstyled">
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-2">
+              <div class="widget">
+                <h3 class="heading">Resources</h3>
+                <ul class="links list-unstyled">
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="widget">
+                <h3 class="heading">Contact</h3>
+                <ul class="list-unstyled quick-info links">
+                  <li class="email"><a href="#">mail@example.com</a></li>
+                  <li class="phone"><a href="#">+1 222 212 3819</a></li>
+                  <li class="address">
+                    <a href="#">43 Raymouth Rd. Baltemoer, London 3910</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inner dark">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-8 mb-3 mb-md-0 mx-auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/daterangepicker.js"></script>
+
+    <script src="js/custom.js"></script>
+  </body>
+</html>

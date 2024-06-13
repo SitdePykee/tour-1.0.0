@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="css/daterangepicker.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .out {
+        background-color: #f0f0f0;
+        margin-top: 80px;
+        text-align: center;
+      }
+      .image-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+      .image-container img {
+        box-shadow: 0 0 10px rgba(9, 87, 160, 0.3);
+        width: 390px;
+        height: auto;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 10px;
+      }
+      .image-container img:hover {
+        border: 2px solid #39a7ff;
+      }
+      .form-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding-left: 300px;
+        padding-right: 300px;
+        padding-top: 100px;
+        background-color: rgba(0, 0, 0, 0.6); /* Màu nền overlay */
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999; /* Đảm bảo form nổi lên trên */
+      }
+      .form-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        position: relative; /* Để có thể di chuyển form */
+        z-index: 1000; /* Đảm bảo form nổi lên trên */
+      }
+      .form-container.active {
+        display: flex;
+      }
+      .form-container.active::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+      }
+      .form-container.active::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* Màu nền overlay */
+        z-index: -1;
+      }
+      .form-container h2 {
+        margin-top: 0;
+      }
+      .form-container input[type="text"],
+      .form-container input[type="email"],
+      .form-container input[type="number"],
+      .form-container textarea,
+      .form-container select,
+      .form-container button {
+        margin-top: 10px;
+        padding: 5px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      figure {
+        text-align: center;
+      }
+
+      figure img {
+        width: 200px;
+        height: auto;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 10px;
+      }
+
+      figure img:hover {
+        border: 2px solid #000;
+      }
+
+      figcaption {
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: x-large;
+      }
+    </style>
+    <title>Travie</title>
+  </head>
+
+  <body>
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icofont-close js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <nav
+      class="site-nav"
+      style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px"
+    >
+      <div class="container">
+        <div class="site-navigation">
+          <img src="favicon.png" alt="" />
+          <a href="index.html" class="logo m-0"
+            >Travie <span class="text-primary">.</span></a
+          >
+
+          <ul
+            class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right"
+          >
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="plan.html">Plan</a></li>
+            <li><a href="register.html">Đăng kí</a></li>
+            <li><a href="login.html">Đăng nhập</a></li>
+          </ul>
+
+          <a
+            href="#"
+            class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
+            data-toggle="collapse"
+            data-target="#main-navbar"
+          >
+            <span></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="out">
+      <h1 style="padding-top: 40px">Chọn phương tiện di chuyển</h1>
+      <div class="image-container">
+        <figure>
+          <img
+            src="https://png.pngtree.com/background/20231101/original/pngtree-a-large-white-tour-bus-parked-near-a-bus-station-against-picture-image_5838875.jpg"
+            alt="Ô tô"
+            data-type="car"
+          />
+          <figcaption>Ô tô</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="https://png.pngtree.com/thumb_back/fw800/background/20230721/pngtree-d-render-of-a-high-speed-train-against-a-white-background-image_3768178.jpg"
+            alt="Tàu hỏa"
+            data-type="train"
+          />
+          <figcaption>Tàu hỏa</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="https://png.pngtree.com/background/20230527/original/pngtree-light-blue-passenger-airplane-on-a-white-background-picture-image_2765094.jpg"
+            alt="Máy bay"
+            data-type="plane"
+          />
+          <figcaption>Máy bay</figcaption>
+        </figure>
+      </div>
+
+      <div class="form-overlay" id="overlay">
+        <div class="form-container" id="car">
+          <h2 style="text-align: center">Thông tin về ô tô</h2>
+          <div class="form-group radio-group">
+            <label> <input type="radio" name="car-type" value="sedan" /> Sedan </label>
+            <label> <input type="radio" name="car-type" value="suv" /> SUV </label>
+            <label>
+              <input type="radio" name="car-type" value="minivan" /> Minivan
+            </label>
+            <label>
+              <input type="radio" name="car-type" value="convertible" /> Convertible
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="car-seats">Số chỗ ngồi:</label>
+            <input type="number" id="car-seats" name="car-seats" />
+          </div>
+          <div class="form-group">
+            <label for="car-requirements">Yêu cầu khác:</label>
+            <textarea id="car-requirements" name="car-requirements" rows="4"></textarea>
+          </div>
+          <button class="select-hotel-btn">Xác nhận</button>
+        </div>
+
+        <div class="form-container" id="train">
+          <h2 style="text-align: center">Đặt vé tàu hỏa</h2>
+          <div class="form-group">
+            <label for="train-date">Ngày đi:</label>
+            <input type="date" id="train-date" name="train-date" />
+          </div>
+          <div class="form-group">
+            <label for="train-time">Giờ đi:</label>
+            <input type="time" id="train-time" name="train-time" />
+          </div>
+          <div class="form-group">
+            <label for="people">Số người:</label>
+            <input type="number" id="people" name="people" />
+          </div>
+          <div class="form-group">
+            <label for="train-class">Hạng vé:</label>
+            <select id="train-class" name="train-class">
+              <option value="economy">Phổ thông</option>
+              <option value="business">Thương gia</option>
+            </select>
+          </div>
+          <button class="select-hotel-btn">Xác nhận</button>
+        </div>
+
+        <div class="form-container" id="plane">
+          <h2 style="text-align: center">Đặt vé máy bay</h2>
+          <div class="form-group">
+            <label for="plane-date">Ngày đi:</label>
+            <input type="date" id="plane-date" name="plane-date" />
+          </div>
+          <div class="form-group">
+            <label for="plane-time">Giờ đi:</label>
+            <input type="time" id="plane-time" name="plane-time" />
+          </div>
+          <div class="form-group">
+            <label for="plane-people">Số người:</label>
+            <input type="number" id="plane-people" name="plane-people" />
+          </div>
+          <div class="form-group">
+            <label for="plane-class">Hạng vé:</label>
+            <select id="plane-class" name="plane-class">
+              <option value="economy">Phổ thông</option>
+              <option value="business">Thương gia</option>
+              <option value="first">Hạng nhất</option>
+            </select>
+          </div>
+          <button class="select-hotel-btn">Xác nhận</button>
+        </div>
+      </div>
+
+      <script>
+        const images = document.querySelectorAll(".image-container img");
+        const formContainers = document.querySelectorAll(".form-container");
+        const overlay = document.getElementById("overlay");
+
+        // Hiển thị form khi click vào hình ảnh
+        images.forEach((image) => {
+          image.addEventListener("click", () => {
+            const type = image.getAttribute("data-type");
+            showForm(type);
+          });
+        });
+
+        // Đóng overlay khi click ngoài form
+        overlay.addEventListener("click", (event) => {
+          if (event.target === overlay) {
+            hideOverlay();
+          }
+        });
+
+        function showForm(type) {
+          formContainers.forEach((container) => {
+            container.style.display = "none";
+          });
+
+          const formToShow = document.getElementById(type);
+          if (formToShow) {
+            formToShow.style.display = "block";
+            overlay.style.display = "block"; // Hiển thị overlay
+          }
+        }
+
+        function hideOverlay() {
+          formContainers.forEach((container) => {
+            container.style.display = "none";
+          });
+          overlay.style.display = "none"; // Ẩn overlay
+        }
+      </script>
+    </div>
+
+    <footer class="section footer-section" style="margin-top: 50px">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>About Travie</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quasi
+              perferendis ratione perspiciatis accusantium.
+            </p>
+          </div>
+
+          <div class="col-md-3 ml-auto">
+            <h3>Pages</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h3>Contact Us</h3>
+            <p>company@yourdomain.com</p>
+            <p>+1 293 3920 329</p>
+            <p>234 Fake St. New York City, USA</p>
+          </div>
+        </div>
+
+        <div class="row pt-5">
+          <div class="col-md-12 text-center">
+            <div class="border-top pt-5"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function showTabs(type) {
+        document.querySelector(".image-selection").style.display = "none";
+        document.querySelector(".tabs").style.display = "flex";
+
+        openTab(null, type);
+      }
+
+      function openTab(event, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab-link");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        if (event) {
+          event.currentTarget.className += " active";
+        } else {
+          document.querySelector(
+            `button[onclick="openTab(event, '${tabName}')"]`
+          ).className += " active";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector(".image-selection img").click();
+      });
+    </script>
+  </body>
+</html>
